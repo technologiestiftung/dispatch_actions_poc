@@ -22,7 +22,7 @@ jobs:
       - name: Set Up Variables
         run: |
           echo "ENVIRONMENT=${{ github.event.inputs.environment || github.event.client_payload.environment || 'development' }}" >> $GITHUB_ENV
-          echo "DWD_VERSION=${{ github.event.inputs.dwd_harvester_version || github.event.client_payload.dwd_version || 'latest' }}" >> $GITHUB_ENV
+          echo "DWD_VERSION=${{ github.event.inputs.dwd_harvester_version || github.event.client_payload.dwd_harvester_version || 'latest' }}" >> $GITHUB_ENV
         id: setup-variables
       - name: Should be the Harvester
         run: echo "$DWD_VERSION in $ENVIRONMENT"
